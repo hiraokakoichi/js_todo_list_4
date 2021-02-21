@@ -156,7 +156,9 @@ function makeDeleteBtn(){
             // 状態ボタンを表示
             makeStatusBtn();
             // 削除ボタンを表示
-            makeDeleteBtn();         
+            makeDeleteBtn();
+            // クラス操作
+            controllClass();
         });
     }
 
