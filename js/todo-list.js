@@ -183,5 +183,7 @@ add_btn.addEventListener('click', function() {
     makeStatusBtn();
     // 削除ボタンを表示
     makeDeleteBtn();
+    // クラス操作
+    controllClass();
 });
 
