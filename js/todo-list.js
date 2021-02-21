@@ -1,14 +1,14 @@
 let todoList = [];
 const statusList = ['作業中','完了'];
-const statusObj = {};
 
 const add_btn = document.getElementById('add_btn');
 const toggleTodoList = document.getElementsByName('condition');
 
 function controllClass(){
-    let checkedRadioVal;
     // ラジオボタン要素を取得
-    //const toggleTodoList = document.getElementsByName('condition');
+    let checkedRadioVal;
+    // タスク追加先のtable要素を取得
+    const task_table = document.getElementById('task_table_body');
     // チェックされてるラジオボタンの値を取得
     for( let i=0; i < toggleTodoList.length; i++ ) {
         if ( toggleTodoList[i].checked ) {
@@ -82,8 +82,6 @@ function showTodoList(){
         /****** 1列目 ******/
         // テーブルに行を追加
         let new_row = task_table.insertRow();
-        // 行にクラス追加
-        new_row.classList.add(statusList[0]);
         // 行にセルを追加
         let new_cell = new_row.insertCell();
         // テキストノード作成
@@ -143,7 +141,6 @@ function makeDeleteBtn(){
         // ボタン要素生成
         let btn = document.createElement('button');
         btn.textContent = '削除';
-        //status_btn.classList.add('delete');
         new_cell.appendChild(btn);
 
         btn.addEventListener('click', function() {
